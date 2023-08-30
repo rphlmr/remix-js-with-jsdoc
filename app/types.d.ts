@@ -9,21 +9,23 @@ import type {
 	LoaderArgs as RemixLoaderArgs,
 } from "@remix-run/node";
 
-export declare global {
-	declare type Prettify<T> = {
+declare global {
+	type Prettify<T> = {
 		[K in keyof T]: T[K];
 	} & {};
 
 	/*
 	 *	Remix run types
 	 */
-	declare type MetaFunction = V2_MetaFunction;
-	declare type LinksFunction = RemixLinksFunction;
-	declare type LoaderArgs = RemixLoaderArgs;
-	declare type LoaderData<Loader> = ReturnType<typeof useLoaderData<Loader>>;
-	declare type RouteLoaderData<Loader> = ReturnType<
+	type MetaFunction = V2_MetaFunction;
+	type LinksFunction = RemixLinksFunction;
+	type LoaderArgs = RemixLoaderArgs;
+	type LoaderData<Loader> = ReturnType<typeof useLoaderData<Loader>>;
+	type RouteLoaderData<Loader> = ReturnType<
 		typeof useRouteLoaderData<Loader>
 	>;
-	declare type ActionData<Action> = ReturnType<typeof useActionData<Action>>;
-	declare type AwaitedReturnType<T> = Awaited<ReturnType<T>>;
+	type ActionData<Action> = ReturnType<typeof useActionData<Action>>;
+	type AwaitedReturnType<T extends (...args: any) => any> = Awaited<
+		ReturnType<T>
+	>;
 }
