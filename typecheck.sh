@@ -20,4 +20,3 @@ fi
 
 echo "✅ No type errors found"
 exit 0
-
