@@ -21,6 +21,8 @@ export const links = () => [
 export function loader({ request }) {
 	console.log(new URL(request.url).pathname); // "/"
 	return json({ title: "Hello World!" });
+	// need the payload 'as const'? 👇
+	// return json(/** @type {const} */ ({ title: "Hello World!" }));
 }
 
 export default function App() {
