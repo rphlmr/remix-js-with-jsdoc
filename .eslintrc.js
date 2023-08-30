@@ -1,18 +1,32 @@
+const appFiles = ["app/**/*.{js,jsx}"];
+
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
 	plugins: ["jsdoc"],
+
 	extends: [
 		"@remix-run/eslint-config",
 		"@remix-run/eslint-config/node",
-		"plugin:jsdoc/recommended",
+		"plugin:jsdoc/recommended-typescript-flavor",
 	],
 	rules: {
-		"jsdoc/require-description": 0,
-		"jsdoc/require-returns-description": 0,
-		"jsdoc/require-param-description": 0,
-		"jsdoc/require-returns": 0,
-		"jsdoc/require-jsdoc": 0,
-		"jsdoc/tag-lines": 0,
+		"jsdoc/require-param-description": "off",
+		"jsdoc/require-returns": "off",
+		"jsdoc/require-jsdoc": "off",
+		"jsdoc/tag-lines": "off",
 	},
-	globals: 0,
+	overrides: [
+		{
+			parser: "@typescript-eslint/parser",
+			files: appFiles,
+			parserOptions: {
+				project: "./tsconfig.json",
+			},
+			rules: {
+				// Enforce type safety.
+				"@typescript-eslint/no-unsafe-member-access": "error",
+				"@typescript-eslint/no-unsafe-return": "error",
+			},
+		},
+	],
 };

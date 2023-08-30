@@ -27,7 +27,7 @@ export function loader({ request }) {
 
 export default function App() {
 	/** @type {LoaderData<typeof loader>} */
-	const data = useLoaderData();
+	const data = useLoaderData(); // typed as { title: string }
 
 	console.log(data); // { title: "Hello World!" }
 

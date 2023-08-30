@@ -6,6 +6,7 @@
 		"dev": "remix dev",
 		"start": "remix-serve build",
 		"format": "prettier --write .",
+		"lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
 		"typecheck": "tsc"
 	},
 	"dependencies": {
@@ -16,7 +17,6 @@
 		"drizzle-orm": "^0.28.5",
 		"isbot": "^3.6.8",
 		"postgres": "^3.3.5",
-		"prettier-plugin-jsdoc": "^1.0.1",
 		"react": "^18.2.0",
 		"react-dom": "^18.2.0"
 	},
@@ -28,6 +28,7 @@
 		"eslint": "^8.48.0",
 		"eslint-plugin-jsdoc": "^46.5.0",
 		"prettier": "^3.0.2",
+		"prettier-plugin-jsdoc": "^1.0.1",
 		"typescript": "^5.0.4"
 	},
 	"engines": {
