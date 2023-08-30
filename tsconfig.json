@@ -16,6 +16,7 @@
 		"checkJs": true,
 		"strictNullChecks": true,
 		"noImplicitThis": true,
+		"skipLibCheck": false,
 
 		"forceConsistentCasingInFileNames": true,
 		"noErrorTruncation": true,

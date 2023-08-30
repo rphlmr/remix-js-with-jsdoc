@@ -7,7 +7,7 @@
 		"start": "remix-serve build",
 		"format": "prettier --write .",
 		"lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
-		"typecheck": "tsc"
+		"typecheck": "sh ./typecheck.sh"
 	},
 	"dependencies": {
 		"@remix-run/css-bundle": "^1.19.3",
