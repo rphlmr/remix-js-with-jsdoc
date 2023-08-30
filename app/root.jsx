@@ -17,7 +17,9 @@ export const links = () => [
 	...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
 ];
 
-export function loader() {
+/** @param {LoaderArgs} args */
+export function loader({ request }) {
+	console.log(new URL(request.url).pathname); // "/"
 	return json({ title: "Hello World!" });
 }
 
