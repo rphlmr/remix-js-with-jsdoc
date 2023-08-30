@@ -19,6 +19,7 @@
 
 		"forceConsistentCasingInFileNames": true,
 		"noErrorTruncation": true,
+		"noImplicitAny": true,
 
 		"baseUrl": ".",
 		"paths": {

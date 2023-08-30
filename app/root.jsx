@@ -22,6 +22,11 @@ export function loader() {
 }
 
 export default function App() {
+	/** @type {LoaderData<typeof loader>} */
+	const data = useLoaderData();
+
+	console.log(data); // { title: "Hello World!" }
+
 	return (
 		<html lang="en">
 			<head>
