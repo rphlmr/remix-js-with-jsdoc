@@ -17,8 +17,8 @@ module.exports = {
 	},
 	overrides: [
 		{
-			parser: "@typescript-eslint/parser",
 			files: appFiles,
+			parser: "@typescript-eslint/parser",
 			parserOptions: {
 				project: "./tsconfig.json",
 			},
