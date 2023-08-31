@@ -42,3 +42,20 @@ export async function findUserById(id) {
 		tag: `${user.name}#${user.id}`,
 	};
 }
+
+/** @typedef {Record<UserModel["id"], UserModel>} UserById */
+
+async function getAll() {
+	const results = await db.query.user.findMany();
+
+	return results.reduce(
+		(acc, curr) =>
+			/** @satisfies {UserById} */ ({
+				...acc,
+				[curr.id]: {
+					...curr,
+				},
+			}),
+		/** @type {UserById} */ ({}),
+	);
+}
