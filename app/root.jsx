@@ -1,8 +1,5 @@
-import { json } from "@remix-run/node";
-
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
@@ -14,7 +11,7 @@ import {
 /** @param {LoaderFunctionArgs} args */
 export function loader({ request }) {
   console.log(new URL(request.url).pathname); // "/"
-  return json({ title: "Hello World!" });
+  return { title: "Hello World!" };
   // need the payload 'as const'? 👇
   // return json(/** @type {const} */ ({ title: "Hello World!" }));
 }
