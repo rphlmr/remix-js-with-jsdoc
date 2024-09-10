@@ -1,37 +1,49 @@
 {
 	"private": true,
 	"sideEffects": false,
+	"type": "module",
 	"scripts": {
-		"build": "remix build",
-		"dev": "remix dev",
-		"start": "remix-serve build",
+		"build": "remix vite:build",
+		"dev": "remix vite:dev",
+		"lint": "eslint --ignore-path .gitignore --cache --cache-location ./node_modules/.cache/eslint .",
+		"start": "remix-serve ./build/server/index.js",
 		"format": "prettier --write .",
-		"lint": "eslint --cache --cache-location ./node_modules/.cache/eslint .",
 		"typecheck": "sh ./typecheck.sh"
 	},
 	"dependencies": {
-		"@remix-run/css-bundle": "^1.19.3",
-		"@remix-run/node": "^1.19.3",
-		"@remix-run/react": "^1.19.3",
-		"@remix-run/serve": "^1.19.3",
-		"drizzle-orm": "^0.28.5",
-		"isbot": "^3.6.8",
-		"postgres": "^3.3.5",
-		"react": "^18.2.0",
-		"react-dom": "^18.2.0"
+		"@remix-run/css-bundle": "^2.12.0",
+		"@remix-run/node": "^2.12.0",
+		"@remix-run/react": "^2.12.0",
+		"@remix-run/serve": "^2.12.0",
+		"drizzle-orm": "^0.33.0",
+		"isbot": "^5.1.17",
+		"postgres": "^3.4.4",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
 	},
 	"devDependencies": {
-		"@remix-run/dev": "^1.19.3",
-		"@remix-run/eslint-config": "^1.19.3",
-		"@types/react": "^18.0.35",
-		"@types/react-dom": "^18.0.11",
-		"eslint": "^8.48.0",
-		"eslint-plugin-jsdoc": "^46.5.0",
-		"prettier": "^3.0.2",
-		"prettier-plugin-jsdoc": "^1.0.1",
-		"typescript": "^5.0.4"
+		"@remix-run/dev": "^2.12.0",
+		"@types/eslint": "^9.6.1",
+		"@types/react": "^18.3.5",
+		"@types/react-dom": "^18.3.0",
+		"@typescript-eslint/eslint-plugin": "^8.5.0",
+		"@typescript-eslint/parser": "^8.5.0",
+		"autoprefixer": "^10.4.20",
+		"eslint": "^8.57.0",
+		"eslint-import-resolver-typescript": "^3.6.3",
+		"eslint-plugin-import": "^2.30.0",
+		"eslint-plugin-jsdoc": "^50.2.2",
+		"eslint-plugin-jsx-a11y": "^6.10.0",
+		"eslint-plugin-react": "^7.35.2",
+		"eslint-plugin-react-hooks": "^4.6.2",
+		"postcss": "^8.4.45",
+		"tailwindcss": "^3.4.10",
+		"typescript": "^5.6.2",
+		"vite": "^5.4.3",
+		"vite-tsconfig-paths": "^5.0.1"
 	},
 	"engines": {
-		"node": ">=14.0.0"
-	}
+		"node": ">=20.0.0"
+	},
+	"prettier": {}
 }

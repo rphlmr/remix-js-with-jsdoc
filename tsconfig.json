@@ -1,33 +1,42 @@
 {
-	"include": ["remix.env.d.ts", "**/*.js", "**/*.jsx", "**/*.d.ts"],
-	"exclude": ["build", "public/build"],
-	"compilerOptions": {
-		"lib": ["DOM", "DOM.Iterable", "ES2022"],
-		"isolatedModules": true,
-		"esModuleInterop": true,
-		"jsx": "react-jsx",
-		"module": "CommonJS",
-		"moduleResolution": "node",
-		"resolveJsonModule": true,
-		"target": "ES2022",
+  "include": [
+    "**/*.js",
+    "**/*.jsx",
+    "**/.server/**/*.js",
+    "**/.server/**/*.jsx",
+    "**/.client/**/*.js",
+    "**/.client/**/*.jsx",
+    "**/*.d.ts"
+  ],
+  "compilerOptions": {
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "types": ["@remix-run/node", "vite/client"],
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "target": "ES2022",
 
-		"strict": true,
-		"allowJs": true,
-		"checkJs": true,
-		"strictNullChecks": true,
-		"noImplicitThis": true,
-		"skipLibCheck": false,
+    "strict": true,
+    "allowJs": true,
+    "checkJs": true,
+    "strictNullChecks": true,
+    "noImplicitThis": true,
+    "skipLibCheck": false,
 
-		"forceConsistentCasingInFileNames": true,
-		"noErrorTruncation": true,
-		"noImplicitAny": true,
+    "forceConsistentCasingInFileNames": true,
+    "noErrorTruncation": true,
+    "noImplicitAny": true,
+    "verbatimModuleSyntax": true,
 
-		"baseUrl": ".",
-		"paths": {
-			"~/*": ["./app/*"]
-		},
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./app/*"]
+    },
 
-		// Remix takes care of building everything in `remix build`.
-		"noEmit": true
-	}
+    // Remix takes care of building everything in `remix build`.
+    "noEmit": true
+  }
 }
